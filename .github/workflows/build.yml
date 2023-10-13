@@ -31,12 +31,6 @@ jobs:
         yarn install
         yarn build
 
-    - name: Upload
-      uses: actions/upload-pages-artifact@v2
-      with:
-        name: dist
-        path: ./dist
-
     - name: Archive artifact
       shell: sh
       run: |
