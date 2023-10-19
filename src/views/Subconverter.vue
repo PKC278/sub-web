@@ -29,7 +29,7 @@
                 <el-form-item label="后端地址:">
                   <el-autocomplete style="width: 100%" v-model="form.customBackend" :fetch-suggestions="backendSearch"
                     placeholder="不选，由接口提供方提供">
-                    <!-- <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button> -->
+                    <el-button slot="append" @click="gotoGithub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
                 </el-form-item>
                 <el-form-item label="远程配置:">
@@ -179,7 +179,7 @@
 <script>
 const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
-const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
+const githubRelease = process.env.VUE_APP_BACKEND_RELEASE
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_API
 const configUploadBackend = process.env.VUE_APP_CONFIG_UPLOAD_API
@@ -282,7 +282,7 @@ export default {
   },
   mounted() {
     this.form.clientType = "clash";
-    this.notify();
+    // this.notify();
     // this.getBackendVersion();
   },
   methods: {
@@ -292,8 +292,8 @@ export default {
     goToProject() {
       window.open(project);
     },
-    gotoGayhub() {
-      window.open(gayhubRelease);
+    gotoGithub() {
+      window.open(githubRelease);
     },
     gotoRemoteConfig() {
       window.open(remoteConfigSample);
@@ -433,19 +433,19 @@ export default {
           this.loading = false;
         });
     },
-    notify() {
-      const h = this.$createElement;
+    // notify() {
+    //   const h = this.$createElement;
 
-      this.$notify({
-        title: "隐私提示",
-        type: "warning",
-        message: h(
-          "i",
-          { style: "color: teal" },
-          "各种订阅链接（短链接服务除外）生成纯前端实现，无隐私问题。默认提供后端转换服务，隐私担忧者请自行搭建后端服务。"
-        )
-      });
-    },
+    //   this.$notify({
+    //     title: "隐私提示",
+    //     type: "warning",
+    //     message: h(
+    //       "i",
+    //       { style: "color: teal" },
+    //       "各种订阅链接（短链接服务除外）生成纯前端实现，无隐私问题。默认提供后端转换服务，隐私担忧者请自行搭建后端服务。"
+    //     )
+    //   });
+    // },
     confirmUploadConfig() {
       if (this.uploadConfig === "") {
         this.$message.warning("远程配置不能为空");
