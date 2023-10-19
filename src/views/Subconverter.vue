@@ -5,7 +5,7 @@
         <el-card>
           <div slot="header">
             订阅转换
-            <svg-icon icon-class="github" style="margin-left: 20px" @click="goToProject" />
+            <svg-icon icon-class="github" style="margin-left: 20px;cursor: pointer;" @click="goToProject" />
 
             <!-- <div style="display: inline-block; position:absolute; right: 20px">{{ backendVersion }}</div> -->
           </div>
