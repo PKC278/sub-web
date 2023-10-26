@@ -126,10 +126,10 @@
                 <el-button style="width: 140px" type="primary" @click="clashInstall" icon="el-icon-connection"
                   :disabled="customSubUrl.length === 0">一键导入 Clash</el-button>
               </el-form-item>
-              <el-form-item label-width="0px" style="text-align: center">
+              <!-- <el-form-item label-width="0px" style="text-align: center">
                 <el-button style="width: 290px" type="primary" @click="dialogLoadConfigVisible = true"
                   icon="el-icon-copy-document" :loading="loading">从 URL 解析</el-button>
-              </el-form-item>
+              </el-form-item> -->
             </el-form>
           </el-container>
         </el-card>
