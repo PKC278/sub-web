@@ -28,12 +28,12 @@
               <div v-if="advanced === '2'">
                 <el-form-item label="后端地址:">
                   <el-autocomplete style="width: 100%" v-model="form.customBackend" :fetch-suggestions="backendSearch"
-                    placeholder="不选，由接口提供方提供">
+                    placeholder="可选，留空由网站提供">
                     <el-button slot="append" @click="gotoGithub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
                 </el-form-item>
                 <el-form-item label="远程配置:">
-                  <el-select v-model="form.remoteConfig" allow-create filterable placeholder="不选，由接口提供方提供"
+                  <el-select v-model="form.remoteConfig" allow-create filterable placeholder="可选，留空由后端接口提供"
                     style="width: 100%">
                     <el-option-group v-for="group in options.remoteConfig" :key="group.label" :label="group.label">
                       <el-option v-for="item in group.options" :key="item.value" :label="item.label"
